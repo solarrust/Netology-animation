@@ -175,3 +175,751 @@ li {
 .slide ul.value>li:lang(ru):before{
 	content: none;
 }
+
+#cover h2 {
+	margin:30px 0 0;
+	color:#FFF;
+	text-align:center;
+	font-size:70px;
+}
+#cover p {
+	margin:10px 0 0;
+	text-align:center;
+	color:#FFF;
+	font-size:20px;
+}
+#cover p a {
+	color:#FFF;
+}
+
+.hover {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+}
+
+.hover a{
+	background: lightgrey;
+	color: grey;
+	margin-right: 10px;
+	padding: 15px 30px;
+	transition: none;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hover a:hover {
+	background: #c1d82f;
+	color: #03a1ef;
+}
+
+.hover a.with-transition1 {
+	transition: 1s;
+}
+
+.property {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+}
+
+.property a{
+	background: lightgrey;
+	color: grey;
+	margin-right: 10px;
+	padding: 15px 30px;
+	transition: none;
+	text-decoration: underline;
+	cursor: pointer;
+	line-height: 4;
+}
+
+.property a:hover {
+	background: #c1d82f;
+	color: #03a1ef;
+	border: 5px solid blue;
+}
+
+.property a.with-background-transition {
+	transition-duration: 2s;
+	transition-property: background;
+}
+
+.property a.with-all-transition {
+	transition-duration: 2s;
+	transition-property: all;
+}
+
+.duration {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.duration a{
+	background: lightgrey;
+	color: grey;
+	margin-right: 10px;
+	padding: 15px 30px;
+	transition: none;
+	text-decoration: underline;
+	cursor: pointer;
+	line-height: 4;
+}
+
+.duration a:hover {
+	background: #c1d82f;
+	color: #03a1ef;
+}
+
+.duration a.with-fast-transition {
+	transition-duration: 0.5s;
+	transition-property: all;;
+}
+
+.duration a.with-slow-transition {
+	transition-duration: 3s;
+	transition-property: all;
+}
+
+.timing {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	padding: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	font-size: 18px;
+}
+
+.timing p {
+	color: gray;
+}
+
+.timing p:first-of-type strong {
+	color: crimson;
+}
+
+.timing p:nth-of-type(2) strong {
+	color: midnightblue;
+}
+
+.timing p:nth-of-type(3) strong {
+	color: mediumseagreen;
+}
+
+.timing p:nth-of-type(4) strong {
+	color: orangered;
+}
+
+.timing p:last-of-type strong {
+	color: darkviolet;
+}
+
+.timing div {
+	background: crimson;
+	height: 20px;
+	left: 0;
+	margin-top: -1rem;
+	position: relative;
+	transition-property: all;
+	transition-duration: 5s;
+	width: 20px;
+}
+.timing:hover div {
+	left: 80%;
+}
+.timing .ease {
+	transition-timing-function: ease;
+	} /* Default behavior */
+.timing .linear {
+	transition-timing-function: linear;
+	background: midnightblue;
+	} /* Constant speed */
+.timing .ease-in {
+	transition-timing-function: ease-in;
+	background: mediumseagreen;
+}
+.timing .ease-out {
+	transition-timing-function: ease-out;
+	background: orangered;
+}
+.timing .ease-in-out {
+	transition-timing-function: ease-out;
+	background: darkviolet;
+}
+
+.delay {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+}
+
+.delay div{
+	display: inline-block;
+	background: lightgrey;
+	padding: 1rem;
+	width: 80%;
+	text-align: center;
+}
+
+.delay a{
+	background: blue;
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	transition: all 1s;
+}
+
+.delay div:hover a{
+	background: #c1d82f;
+	color: #03a1ef;
+}
+
+.delay a.with-delay {
+	transition-delay: 1s;
+}
+
+.hover {
+	position: relative;
+	border: 1px solid #f4f1ce;
+	color: black;
+	margin: 30px 0;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+}
+
+.hover a{
+	background: lightgrey;
+	color: grey;
+	margin-right: 10px;
+	padding: 15px 30px;
+	transition: none;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hover a:hover {
+	background: #c1d82f;
+	color: #03a1ef;
+}
+
+.hover a.with-transition {
+	transition: background 2s ease-in-out 1s;
+}
+
+@keyframes bouncing {
+	0% {
+		bottom: 0;
+		box-shadow: 0 0 5px rgba(193, 216, 47, 0.7);
+	}
+	100% {
+		bottom: 50px;
+		box-shadow: 0 50px 50px rgba(193, 216, 47, 0.3);
+	}
+}
+
+#result-1 a {
+	animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+	background: #c1d82f;
+	border-radius: 5px;
+	display: inline-block;
+	color: #03a1ef;
+	text-shadow: 2px 2px 1px lightpink;
+	cursor: pointer;
+	font-size: 1.5rem;
+	font-weight: 300;
+	letter-spacing: 0.4em;
+	padding: 2em 4em 2.2em;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: top;
+}
+
+#result-1 {
+	padding: 9rem 1rem 0;
+	text-align: center;
+}
+
+.too > li {
+	line-height: 1.5;
+}
+
+small {
+	font-size: 75%;
+}
+
+.slide-keyframes p {
+	line-height: 1.1em;
+}
+
+@keyframes around {
+		0% {
+				left: 0;
+				top: 0;
+		}
+		25% {
+				left: 240px;
+				top: 0;
+		}
+		50% {
+				left: 240px;
+				top: 140px;
+		}
+		75% {
+				left: 0;
+				top: 140px;
+		}
+		100% {
+				left: 0;
+				top: 0;
+		}
+}
+
+.result.k {
+		height: 200px;
+		position: absolute;
+		right: 30%;
+		top: 30%;
+}
+
+.square {
+		animation: around 4s linear infinite;
+		width: 20px;
+		height: 20px;
+		position: relative;
+}
+
+.block {
+	position: absolute;
+	top: 25%;
+	right: 50%;
+}
+
+@keyframes shift {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 100px;
+	}
+	100% {
+		left: 200px;
+	}
+}
+
+.result {
+	height: 20px;
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.square1 {
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.block:hover .result .square1{
+	animation: shift 2s linear infinite;
+}
+
+.block:hover .result2 .square1 {
+	animation: shift 500ms linear infinite;
+}
+
+.block:hover .result3 .square1 {
+	animation: shift 4.3s linear infinite;
+}
+
+.slide-delay .result{
+	top: 0;
+	right: 0;
+	margin-bottom: 20px;
+}
+.slide-delay > p{
+	margin-bottom: 5px;
+}
+#delay p{
+	margin-bottom: 10px;
+}
+.slide-delay .result .square{
+	animation: none;
+	line-height: 1em;
+	font-size: 45px;
+}
+.slide-delay .go .result .square{
+	animation: shift 5s linear infinite;
+
+}
+.slide-delay .go .result2 .square{
+	animation-delay: 2s;
+}
+
+@keyframes shift {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 200px;
+	}
+	100% {
+		left: 400px;
+	}
+}
+
+.square2 {
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.block:hover .result .square2 {
+	animation: shift 2s linear 5;
+}
+
+.block:hover .result2 .square2 {
+	animation: shift 2s linear 0.2;
+}
+
+.block:hover .result3 .square2 {
+	animation: shift 2s linear infinite;
+}
+
+@keyframes tobottom {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 240px;
+	}
+}
+
+.result-direction {
+	height: 60px;
+	margin-top: -10px;
+}
+
+.col {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+
+.square3 {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	font-size: 40px;
+}
+
+.slide-direction .rails {
+	height: 290px;
+	position: relative;
+	width: 36px;
+	background-color: lightgray;
+	border-radius: 2px;
+	margin: 0 auto;
+}
+
+.col .square3 {
+	animation: tobottom 2s linear infinite;
+}
+
+.col2 .square3 {
+	animation: tobottom 2s linear reverse infinite;
+}
+
+.col3 .square3 {
+	animation: tobottom 2s linear alternate infinite;
+}
+
+.col4 .square3 {
+	animation: tobottom 2s linear alternate-reverse infinite;
+}
+
+@keyframes shift {
+		0% {
+				left: 0;
+		}
+		50% {
+				left: 40%;
+		}
+		100% {
+				left: 80%;
+		}
+}
+
+.result-pause {
+	top: 20%;
+	right: 0;
+	left: 0;
+}
+
+.slide-state .square {
+		animation: shift 6s linear alternate infinite
+}
+
+.slide-state .result:hover .square {
+		animation-play-state: paused;
+}
+
+.slide-mode p {
+		line-height: 1.1em;
+}
+
+.result-mode {
+		padding: 1rem 1rem 0;
+}
+
+#result-4 {
+		padding: 1rem 1rem 0;
+}
+
+#result-4 p {
+		color: grey;
+		margin: 0;
+		position: relative;
+}
+
+#result-4 p:first-child {
+		margin-bottom: 1rem;
+}
+
+#result-4 p span {
+		animation: toggle 6s infinite both;
+		left: 0;
+		position: absolute;
+}
+
+#result-4 p:first-child span {
+		animation-name: tabs;
+		margin-right: 1rem;
+		position: static;
+}
+
+#result-4 p span:nth-child(1) {
+		animation-delay: 0;
+		position: static;
+}
+
+#result-4 p span:nth-child(2) {
+		animation-delay: 2s;
+}
+
+#result-4 p span:nth-child(3) {
+		animation-delay: 4s;
+}
+
+#result-4 div {
+		background: lightgray;
+		height: 30px;
+		margin-bottom: 2rem;
+		width: 530px;
+		position: relative;
+}
+
+#result-4 div div {
+		animation: race-none 6s linear infinite;
+		background: crimson;
+		height: 30px;
+		margin-bottom: 0;
+		position: relative;
+		width: 30px;
+		border-radius: 50%;
+}
+
+#result-4 .forwards div {
+		animation-name: race-forwards;
+}
+
+#result-4 .backwards div {
+		animation-name: race-backwards;
+}
+
+#result-4 .both div {
+		animation-name: race-both;
+}
+
+@keyframes race-none {
+		0% {
+				background: crimson;
+				left: 0;
+		}
+		33% {
+				background: crimson;
+				left: 0;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: crimson;
+				left: 0;
+		}
+		100% {
+				background: crimson;
+				left: 0;
+		}
+}
+
+@keyframes race-forwards {
+		0% {
+				background: crimson;
+				left: 0;
+		}
+		33% {
+				background: crimson;
+				left: 0;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+		100% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+}
+
+@keyframes race-backwards {
+		0% {
+				background: midnightblue;
+				left: 250px;
+		}
+		33% {
+				background: midnightblue;
+				left: 250px;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: crimson;
+				left: 0;
+		}
+		100% {
+				background: crimson;
+				left: 0;
+		}
+}
+
+@keyframes race-both {
+		0% {
+				background: midnightblue;
+				left: 250px;
+		}
+		33% {
+				background: midnightblue;
+				left: 250px;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+		100% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+}
+
+.none:before,
+.forwards:before,
+.backwards:before,
+.both:before {
+	content: "";
+	top: -35px;
+	position: absolute;
+	color: gray;
+}
+
+.none:before {
+	content: "none";
+}
+
+.forwards:before {
+	content: "forwards";
+}
+
+.backwards:before {
+	content: "backwards";
+}
+
+.both:before {
+	content: "both";
+}
+
+.screen {
+	max-width: 100%;
+}
+
+.links::after {
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+
+.links {
+	text-align: justify;
+}
+
+.ball-info{
+	font-size: 12px;
+}
+.ball-info span{
+	display: inline-block;
+	margin-right: 4px;
+	color: green;
+}
+.ball-info span:nth-child(1)~span{
+	color: blue;
+}
+.ball-info span:nth-last-child(1):nth-child(6){
+	color: red;
+}
