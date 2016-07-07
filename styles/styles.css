@@ -21,7 +21,8 @@ li {
 	z-index: -1;
 }
 
-#cover .ball-container {
+#cover .ball-container,
+.slide-events .ball-container{
 	width: 342px;
 	margin: 0 auto;
 	position: absolute;
@@ -30,7 +31,8 @@ li {
 	margin-left: -171px;
 }
 
-#cover .ball {
+#cover .ball,
+.slide-events .ball{
 	width: 42px;
 	height: 42px;
 	background-color: #c1d82f;
@@ -40,8 +42,11 @@ li {
 	margin-top: -21px;
 }
 
-#cover .ball.mb {
+#cover .ball.mb{
 	animation: motion-blur 4s ease-in-out infinite;
+}
+.slide-events .ball.mb.go{
+	animation: motion-blur 4s ease-in-out 5;
 }
 
 @keyframes motion-blur {
