@@ -1185,6 +1185,47 @@
 			</div>
 		</div>
 	</section>
+	<section class="slide slide-delay">
+		<style>
+			.slide-delay .result{
+				top: 0;
+				right: 0;
+				margin-bottom: 20px;
+			}
+			.slide-delay > p{
+				margin-bottom: 5px;
+			}
+			#delay p{
+				margin-bottom: 10px;
+			}
+			.slide-delay .result .square{
+				animation: none;
+				line-height: 1em;
+				font-size: 45px;
+			}
+			.slide-delay .go .result .square{
+				animation: shift 5s linear infinite;
+
+			}
+			.slide-delay .go .result2 .square{
+				animation-delay: 2s;
+			}
+		</style>
+		<h2>animation-delay</h2>
+		<p>Подобно transition-delay, можно задавать в милисекундах и секундах, дробным или целым. Определяет задержку перед началом анимации.</p>
+		<button onclick="document.getElementById('delay').className = 'go';">Start!</button>
+		<button onclick="document.getElementById('delay').className = '';">Stop!</button>
+		<div id="delay">
+			<p>По умолчанию 0.</p>
+			<div class="result">
+				<div class="square"></div>
+			</div>
+			<p>animation-delay: 2s;</p>
+			<div class="result result2">
+				<div class="square"></div>
+			</div>
+		</div>
+	</section>
 	<section class="slide">
 		<h2>Поддержка браузерами</h2>
 		<pre>
