@@ -115,10 +115,55 @@ li {
 }
 
 #cover .ball.mb{
-	animation: motion-blur 4s ease-in-out infinite;
+	-webkit-animation: motion-blur 4s ease-in-out infinite;
+	        animation: motion-blur 4s ease-in-out infinite;
 }
 .slide-events .ball.mb.go{
-	animation: motion-blur 4s ease-in-out 5;
+	-webkit-animation: motion-blur 4s ease-in-out 5;
+	        animation: motion-blur 4s ease-in-out 5;
+}
+
+@-webkit-keyframes motion-blur {
+	0% {
+		left: 0;
+		box-shadow: 0 0 0 rgba(108, 179, 63, 0);
+	}
+	5% {
+		left: 0;
+		-webkit-transform-origin: 0 0;
+		        transform-origin: 0 0;
+		-webkit-transform: scaleX(0.85);
+		        transform: scaleX(0.85);
+	}
+	25% {
+		box-shadow: -20px 0 15px -10px rgba(108, 179, 63, 0.4);
+		-webkit-transform: scaleX(1.05) skewX(-3deg);
+		        transform: scaleX(1.05) skewX(-3deg);
+	}
+	50% {
+		left: 300px;
+		box-shadow: 0 0 0 rgba(108, 179, 63, 0);
+		-webkit-transform: scaleX(1) skewX(0deg);
+		        transform: scaleX(1) skewX(0deg);
+	}
+	55% {
+		left: 300px;
+		-webkit-transform-origin: 100% 0;
+		        transform-origin: 100% 0;
+		-webkit-transform: scaleX(0.9);
+		        transform: scaleX(0.9);
+	}
+	75% {
+		box-shadow: 20px 0 15px -10px rgba(108, 179, 63, 0.4);
+		-webkit-transform: scaleX(1.05) skewX(3deg);
+		        transform: scaleX(1.05) skewX(3deg);
+	}
+	100% {
+		left: 0px;
+		box-shadow: 0 0 0 rgba(108, 179, 63, 0);
+		-webkit-transform: scaleX(1) skewX(0deg);
+		        transform: scaleX(1) skewX(0deg);
+	}
 }
 
 @keyframes motion-blur {
@@ -128,31 +173,39 @@ li {
 	}
 	5% {
 		left: 0;
-		transform-origin: 0 0;
-		transform: scaleX(0.85);
+		-webkit-transform-origin: 0 0;
+		        transform-origin: 0 0;
+		-webkit-transform: scaleX(0.85);
+		        transform: scaleX(0.85);
 	}
 	25% {
 		box-shadow: -20px 0 15px -10px rgba(108, 179, 63, 0.4);
-		transform: scaleX(1.05) skewX(-3deg);
+		-webkit-transform: scaleX(1.05) skewX(-3deg);
+		        transform: scaleX(1.05) skewX(-3deg);
 	}
 	50% {
 		left: 300px;
 		box-shadow: 0 0 0 rgba(108, 179, 63, 0);
-		transform: scaleX(1) skewX(0deg);
+		-webkit-transform: scaleX(1) skewX(0deg);
+		        transform: scaleX(1) skewX(0deg);
 	}
 	55% {
 		left: 300px;
-		transform-origin: 100% 0;
-		transform: scaleX(0.9);
+		-webkit-transform-origin: 100% 0;
+		        transform-origin: 100% 0;
+		-webkit-transform: scaleX(0.9);
+		        transform: scaleX(0.9);
 	}
 	75% {
 		box-shadow: 20px 0 15px -10px rgba(108, 179, 63, 0.4);
-		transform: scaleX(1.05) skewX(3deg);
+		-webkit-transform: scaleX(1.05) skewX(3deg);
+		        transform: scaleX(1.05) skewX(3deg);
 	}
 	100% {
 		left: 0px;
 		box-shadow: 0 0 0 rgba(108, 179, 63, 0);
-		transform: scaleX(1) skewX(0deg);
+		-webkit-transform: scaleX(1) skewX(0deg);
+		        transform: scaleX(1) skewX(0deg);
 	}
 }
 
@@ -207,6 +260,7 @@ li {
 	color: grey;
 	margin-right: 10px;
 	padding: 15px 30px;
+	-webkit-transition: none;
 	transition: none;
 	text-decoration: underline;
 	cursor: pointer;
@@ -218,6 +272,7 @@ li {
 }
 
 .hover a.with-transition1 {
+	-webkit-transition: 1s;
 	transition: 1s;
 }
 
@@ -236,6 +291,7 @@ li {
 	color: grey;
 	margin-right: 10px;
 	padding: 15px 30px;
+	-webkit-transition: none;
 	transition: none;
 	text-decoration: underline;
 	cursor: pointer;
@@ -249,12 +305,16 @@ li {
 }
 
 .property a.with-background-transition {
-	transition-duration: 2s;
+	-webkit-transition-duration: 2s;
+	        transition-duration: 2s;
+	-webkit-transition-property: background;
 	transition-property: background;
 }
 
 .property a.with-all-transition {
-	transition-duration: 2s;
+	-webkit-transition-duration: 2s;
+	        transition-duration: 2s;
+	-webkit-transition-property: all;
 	transition-property: all;
 }
 
@@ -274,6 +334,7 @@ li {
 	color: grey;
 	margin-right: 10px;
 	padding: 15px 30px;
+	-webkit-transition: none;
 	transition: none;
 	text-decoration: underline;
 	cursor: pointer;
@@ -286,12 +347,16 @@ li {
 }
 
 .duration a.with-fast-transition {
-	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	        transition-duration: 0.5s;
+	-webkit-transition-property: all;
 	transition-property: all;;
 }
 
 .duration a.with-slow-transition {
-	transition-duration: 3s;
+	-webkit-transition-duration: 3s;
+	        transition-duration: 3s;
+	-webkit-transition-property: all;
 	transition-property: all;
 }
 
@@ -336,30 +401,37 @@ li {
 	left: 0;
 	margin-top: -1rem;
 	position: relative;
+	-webkit-transition-property: all;
 	transition-property: all;
-	transition-duration: 5s;
+	-webkit-transition-duration: 5s;
+	        transition-duration: 5s;
 	width: 20px;
 }
 .timing:hover div {
 	left: 80%;
 }
 .timing .ease {
-	transition-timing-function: ease;
+	-webkit-transition-timing-function: ease;
+	        transition-timing-function: ease;
 	} /* Default behavior */
 .timing .linear {
-	transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;
+	        transition-timing-function: linear;
 	background: midnightblue;
 	} /* Constant speed */
 .timing .ease-in {
-	transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	        transition-timing-function: ease-in;
 	background: mediumseagreen;
 }
 .timing .ease-out {
-	transition-timing-function: ease-out;
+	-webkit-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
 	background: orangered;
 }
 .timing .ease-in-out {
-	transition-timing-function: ease-out;
+	-webkit-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
 	background: darkviolet;
 }
 
@@ -386,6 +458,7 @@ li {
 	color: white;
 	padding: 5px 10px;
 	text-decoration: none;
+	-webkit-transition: all 1s;
 	transition: all 1s;
 }
 
@@ -395,7 +468,8 @@ li {
 }
 
 .delay a.with-delay {
-	transition-delay: 1s;
+	-webkit-transition-delay: 1s;
+	        transition-delay: 1s;
 }
 
 .hover {
@@ -413,6 +487,7 @@ li {
 	color: grey;
 	margin-right: 10px;
 	padding: 15px 30px;
+	-webkit-transition: none;
 	transition: none;
 	text-decoration: underline;
 	cursor: pointer;
@@ -424,7 +499,19 @@ li {
 }
 
 .hover a.with-transition {
+	-webkit-transition: background 2s ease-in-out 1s;
 	transition: background 2s ease-in-out 1s;
+}
+
+@-webkit-keyframes bouncing {
+	0% {
+		bottom: 0;
+		box-shadow: 0 0 5px rgba(193, 216, 47, 0.7);
+	}
+	100% {
+		bottom: 50px;
+		box-shadow: 0 50px 50px rgba(193, 216, 47, 0.3);
+	}
 }
 
 @keyframes bouncing {
@@ -439,7 +526,8 @@ li {
 }
 
 #result-1 a {
-	animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+	-webkit-animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+	        animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
 	background: #c1d82f;
 	border-radius: 5px;
 	display: inline-block;
@@ -473,6 +561,29 @@ small {
 	line-height: 1.1em;
 }
 
+@-webkit-keyframes around {
+		0% {
+				left: 0;
+				top: 0;
+		}
+		25% {
+				left: 240px;
+				top: 0;
+		}
+		50% {
+				left: 240px;
+				top: 140px;
+		}
+		75% {
+				left: 0;
+				top: 140px;
+		}
+		100% {
+				left: 0;
+				top: 0;
+		}
+}
+
 @keyframes around {
 		0% {
 				left: 0;
@@ -504,7 +615,8 @@ small {
 }
 
 .square {
-		animation: around 4s linear infinite;
+		-webkit-animation: around 4s linear infinite;
+		        animation: around 4s linear infinite;
 		width: 20px;
 		height: 20px;
 		position: relative;
@@ -514,6 +626,18 @@ small {
 	position: absolute;
 	top: 25%;
 	right: 50%;
+}
+
+@-webkit-keyframes shift {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 100px;
+	}
+	100% {
+		left: 200px;
+	}
 }
 
 @keyframes shift {
@@ -541,15 +665,18 @@ small {
 }
 
 .block:hover .result .square1{
-	animation: shift 2s linear infinite;
+	-webkit-animation: shift 2s linear infinite;
+	        animation: shift 2s linear infinite;
 }
 
 .block:hover .result2 .square1 {
-	animation: shift 500ms linear infinite;
+	-webkit-animation: shift 500ms linear infinite;
+	        animation: shift 500ms linear infinite;
 }
 
 .block:hover .result3 .square1 {
-	animation: shift 4.3s linear infinite;
+	-webkit-animation: shift 4.3s linear infinite;
+	        animation: shift 4.3s linear infinite;
 }
 
 .slide-delay .result{
@@ -564,16 +691,19 @@ small {
 	margin-bottom: 10px;
 }
 .slide-delay .result .square{
-	animation: none;
+	-webkit-animation: none;
+	        animation: none;
 	line-height: 1em;
 	font-size: 45px;
 }
 .slide-delay .go .result .square{
-	animation: shift 5s linear infinite;
+	-webkit-animation: shift 5s linear infinite;
+	        animation: shift 5s linear infinite;
 
 }
 .slide-delay .go .result2 .square{
-	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	        animation-delay: 2s;
 }
 
 @keyframes shift {
@@ -595,15 +725,27 @@ small {
 }
 
 .block:hover .result .square2 {
-	animation: shift 2s linear 5;
+	-webkit-animation: shift 2s linear 5;
+	        animation: shift 2s linear 5;
 }
 
 .block:hover .result2 .square2 {
-	animation: shift 2s linear 0.2;
+	-webkit-animation: shift 2s linear 0.2;
+	        animation: shift 2s linear 0.2;
 }
 
 .block:hover .result3 .square2 {
-	animation: shift 2s linear infinite;
+	-webkit-animation: shift 2s linear infinite;
+	        animation: shift 2s linear infinite;
+}
+
+@-webkit-keyframes tobottom {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 240px;
+	}
 }
 
 @keyframes tobottom {
@@ -643,19 +785,23 @@ small {
 }
 
 .col .square3 {
-	animation: tobottom 2s linear infinite;
+	-webkit-animation: tobottom 2s linear infinite;
+	        animation: tobottom 2s linear infinite;
 }
 
 .col2 .square3 {
-	animation: tobottom 2s linear reverse infinite;
+	-webkit-animation: tobottom 2s linear reverse infinite;
+	        animation: tobottom 2s linear reverse infinite;
 }
 
 .col3 .square3 {
-	animation: tobottom 2s linear alternate infinite;
+	-webkit-animation: tobottom 2s linear alternate infinite;
+	        animation: tobottom 2s linear alternate infinite;
 }
 
 .col4 .square3 {
-	animation: tobottom 2s linear alternate-reverse infinite;
+	-webkit-animation: tobottom 2s linear alternate-reverse infinite;
+	        animation: tobottom 2s linear alternate-reverse infinite;
 }
 
 @keyframes shift {
@@ -677,11 +823,13 @@ small {
 }
 
 .slide-state .square {
-		animation: shift 6s linear alternate infinite
+		-webkit-animation: shift 6s linear alternate infinite;
+		        animation: shift 6s linear alternate infinite
 }
 
 .slide-state .result:hover .square {
-		animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+		        animation-play-state: paused;
 }
 
 .slide-mode p {
@@ -707,28 +855,33 @@ small {
 }
 
 #result-4 p span {
-		animation: toggle 6s infinite both;
+		-webkit-animation: toggle 6s infinite both;
+		        animation: toggle 6s infinite both;
 		left: 0;
 		position: absolute;
 }
 
 #result-4 p:first-child span {
-		animation-name: tabs;
+		-webkit-animation-name: tabs;
+		        animation-name: tabs;
 		margin-right: 1rem;
 		position: static;
 }
 
 #result-4 p span:nth-child(1) {
-		animation-delay: 0;
+		-webkit-animation-delay: 0;
+		        animation-delay: 0;
 		position: static;
 }
 
 #result-4 p span:nth-child(2) {
-		animation-delay: 2s;
+		-webkit-animation-delay: 2s;
+		        animation-delay: 2s;
 }
 
 #result-4 p span:nth-child(3) {
-		animation-delay: 4s;
+		-webkit-animation-delay: 4s;
+		        animation-delay: 4s;
 }
 
 #result-4 div {
@@ -740,7 +893,8 @@ small {
 }
 
 #result-4 div div {
-		animation: race-none 6s linear infinite;
+		-webkit-animation: race-none 6s linear infinite;
+		        animation: race-none 6s linear infinite;
 		background: crimson;
 		height: 30px;
 		margin-bottom: 0;
@@ -750,15 +904,45 @@ small {
 }
 
 #result-4 .forwards div {
-		animation-name: race-forwards;
+		-webkit-animation-name: race-forwards;
+		        animation-name: race-forwards;
 }
 
 #result-4 .backwards div {
-		animation-name: race-backwards;
+		-webkit-animation-name: race-backwards;
+		        animation-name: race-backwards;
 }
 
 #result-4 .both div {
-		animation-name: race-both;
+		-webkit-animation-name: race-both;
+		        animation-name: race-both;
+}
+
+@-webkit-keyframes race-none {
+		0% {
+				background: crimson;
+				left: 0;
+		}
+		33% {
+				background: crimson;
+				left: 0;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: crimson;
+				left: 0;
+		}
+		100% {
+				background: crimson;
+				left: 0;
+		}
 }
 
 @keyframes race-none {
@@ -785,6 +969,33 @@ small {
 		100% {
 				background: crimson;
 				left: 0;
+		}
+}
+
+@-webkit-keyframes race-forwards {
+		0% {
+				background: crimson;
+				left: 0;
+		}
+		33% {
+				background: crimson;
+				left: 0;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+		100% {
+				background: mediumseagreen;
+				left: 500px;
 		}
 }
 
@@ -815,6 +1026,33 @@ small {
 		}
 }
 
+@-webkit-keyframes race-backwards {
+		0% {
+				background: midnightblue;
+				left: 250px;
+		}
+		33% {
+				background: midnightblue;
+				left: 250px;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: crimson;
+				left: 0;
+		}
+		100% {
+				background: crimson;
+				left: 0;
+		}
+}
+
 @keyframes race-backwards {
 		0% {
 				background: midnightblue;
@@ -839,6 +1077,33 @@ small {
 		100% {
 				background: crimson;
 				left: 0;
+		}
+}
+
+@-webkit-keyframes race-both {
+		0% {
+				background: midnightblue;
+				left: 250px;
+		}
+		33% {
+				background: midnightblue;
+				left: 250px;
+		}
+		34% {
+				background: midnightblue;
+				left: 250px;
+		}
+		66% {
+				background: mediumseagreen;
+				left: 500px
+		}
+		67% {
+				background: mediumseagreen;
+				left: 500px;
+		}
+		100% {
+				background: mediumseagreen;
+				left: 500px;
 		}
 }
 
