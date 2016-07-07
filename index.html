@@ -15,7 +15,7 @@
 	</header>
 	<section class="slide" id="cover">
 		<h2>Анимация в CSS</h2>
-		<p>It's a magic! &#128302; </p>
+		<p>It's a magic! <i class="emoji magic"></i> </p>
 		<i class="background"></i>
 		<div class="ball-container">
 			<div class="ball mb"></div>
@@ -41,7 +41,7 @@
 	<section class="slide">
 		<h2>План занятия</h2>
 		<ul>
-			<li>Transitin</li>
+			<li>Transition</li>
 			<li>Animation</li>
 			<li>Управление при помощи js</li>
 		</ul>
@@ -182,7 +182,7 @@
 			Единица измерения:
 			<ul>
 				<li><mark>s</mark> - секунды (1s, 5s, 0.5s)</li>
-				<li><mark>ms</mark> - миллисекунды &#x1f914;</li>
+				<li><mark>ms</mark> - миллисекунды <i class="emoji think"></i></li>
 			</ul>
 		</p>
 	</section>
@@ -246,9 +246,9 @@
 			<li><mark>ease-out</mark></li>
 			<li><mark>step-start</mark></li>
 			<li><mark>step-end</mark></li>
-			<li><mark>steps(число)</mark></li>
+			<li><mark>steps(число, start | end)</mark></li>
 			<br />
-			<li><mark><a href="http://cubic-bezier.com/">cubic-bezier(a ,b, c, d)</a></mark> &#x1f644;</li>
+			<li><mark><a href="http://cubic-bezier.com/">cubic-bezier(a ,b, c, d)</a></mark> <i class="emoji hm"></i></li>
 		</ul>
 		<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function">Официальная спецификация</a>
 	</section>
@@ -601,7 +601,7 @@
 					 }
 			 }
 
-			 .result {
+			 .result.k {
 					 height: 200px;
 					 position: absolute;
 					 right: 30%;
@@ -614,11 +614,6 @@
 					 height: 20px;
 					 position: relative;
 			 }
-
-			 .square:before {
-			    content: "\1f428";
-			    font-size: 60px;
-			}
 		</style>
 		<h2>Еще пример анимации и keyframes</h2>
 	 	<pre>
@@ -631,8 +626,8 @@
 			<code>}</code>
 			<code>.square{ animation: around 4s linear infinite;}</code>
 		 </pre>
-		 <div class="result next">
-				 <div class="square"></div>
+		 <div class="result k next">
+				 <div class="square"><i class="emoji bb koala"></i></div>
 		 </div>
  	</section>
 	<section class="slide">
@@ -647,7 +642,7 @@
 	<style>
 		.block {
 			position: absolute;
-			top: 20%;
+			top: 25%;
 			right: 50%;
 		}
 
@@ -679,25 +674,12 @@
 			animation: shift 2s linear infinite;
 		}
 
-		.result .square1:before {
-			content: "\1f436";
-			font-size: 60px;
-		}
-
 		.block:hover .result2 .square1 {
 			animation: shift 500ms linear infinite;
 		}
 
-		.result2 .square1:before {
-			content: "\1f430";
-		}
-
 		.block:hover .result3 .square1 {
 			animation: shift 4.3s linear infinite;
-		}
-
-		.result3 .square1:before {
-			content: "\1f981";
 		}
 	</style>
 	<h2>Пример animation-duration</h2>
@@ -706,13 +688,19 @@
 	<mark>animation-duration : 4.3s;</mark>
 	<div class="block">
 		<div class="result">
-			<div class="square1"></div>
+			<div class="square1">
+				<i class="dog bb emoji"></i>
+			</div>
 		</div>
 		<div class="result result2">
-			<div class="square1"></div>
+			<div class="square1">
+				<i class="emoji bb rabbit"></i>
+			</div>
 		</div>
 		<div class="result result3">
-			<div class="square1"></div>
+			<div class="square1">
+				<i class="emoji bb leo"></i>
+			</div>
 		</div>
 	</div>
   </section>
@@ -749,11 +737,15 @@
 		<div id="delay">
 			<p>По умолчанию 0.</p>
 			<div class="result">
-				<div class="square"></div>
+				<div class="square">
+					<i class="emoji bb koala marg"></i>
+				</div>
 			</div>
 			<p>animation-delay: 2s;</p>
 			<div class="result result2">
-				<div class="square"></div>
+				<div class="square">
+					<i class="emoji bb koala marg"></i>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -788,25 +780,12 @@
 				animation: shift 2s linear 5;
 			}
 
-			.result .square2:before {
-				content: "\1f436";
-				font-size: 60px;
-			}
-
 			.block:hover .result2 .square2 {
 				animation: shift 2s linear 0.2;
 			}
 
-			.result2 .square2:before {
-				content: "\1f430";
-			}
-
 			.block:hover .result3 .square2 {
 				animation: shift 2s linear infinite;
-			}
-
-			.result3 .square2:before {
-				content: "\1f981";
 			}
 		</style>
 		<h2>Примеры animation-iteration-count</h2>
@@ -815,14 +794,20 @@
 		<mark>animation-iteration-count : infinite;</mark>
 		<div class="block">
 			<div class="result">
-				<div class="square2"></div>
+				<div class="square2">
+					<i class="emoji bb dog"></i>
+				</div>
 			</div>
 			<div class="result result2">
-				<div class="square2"></div>
+				<div class="square2">
+					<i class="emoji bb rabbit"></i>
+				</div>
 			</div>
 
 			<div class="result result3">
-				<div class="square2"></div>
+				<div class="square2">
+					<i class="emoji bb leo"></i>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -872,9 +857,9 @@
 			}
 
 			.slide-direction .rails {
-				height: 260px;
+				height: 290px;
 				position: relative;
-				width: 20px;
+				width: 36px;
 				background-color: lightgray;
 				border-radius: 2px;
 				margin: 0 auto;
@@ -884,32 +869,16 @@
 				animation: tobottom 2s linear infinite;
 			}
 
-			.col .square3::before {
-				content: "\1f642";
-			}
-
 			.col2 .square3 {
 				animation: tobottom 2s linear reverse infinite;
-			}
-
-			.col2 .square3:before {
-				content: "\1f643";
 			}
 
 			.col3 .square3 {
 				animation: tobottom 2s linear alternate infinite;
 			}
 
-			.col3 .square3::before {
-				content: "\1f60f";
-			}
-
 			.col4 .square3 {
 				animation: tobottom 2s linear alternate-reverse infinite;
-			}
-
-			.col4 .square3::before {
-				content: "\1f612";
 			}
 		</style>
 		<h2>Примеры animation-direction</h2>
@@ -918,25 +887,33 @@
 			<div class="col">
 				<span>normal</span>
 				<div class="rails">
-					<div class="square3"></div>
+					<div class="square3">
+						<i class="emoji smile"></i>
+					</div>
 				</div>
 			</div>
 			<div class="col col2">
 				<span>reverse</span>
 				<div class="rails">
-					<div class="square3"></div>
+					<div class="square3">
+						<i class="emoji revsmile"></i>
+					</div>
 				</div>
 			</div>
 			<div class="col col3">
 				<span>alternate</span>
 				<div class="rails">
-					<div class="square3"></div>
+					<div class="square3">
+						<i class="emoji bad"></i>
+					</div>
 				</div>
 			</div>
 			<div class="col col4">
 				<span>alternate-reverse</span>
 				<div class="rails">
-					<div class="square3"></div>
+					<div class="square3">
+						<i class="emoji sad"></i>
+					</div>
 				</div>
 			</div>
 	</section>
@@ -968,18 +945,15 @@
 					animation: shift 6s linear alternate infinite
 			}
 
-			.result-pause .square::before {
-				content: "\1f30d";
-				font-size: 120px;
-			}
-
 			.slide-state .result:hover .square {
 					animation-play-state: paused;
 			}
 		</style>
 		<h2>Примеры animation-play-state</h2>
 		<div class="result result-pause">
-				<div class="square"></div>
+				<div class="square">
+					<i class="emoji wbb earth"></i>
+				</div>
 		</div>
 		<p class="note">Остановите землю! Я сойду...</p>
 	</section>

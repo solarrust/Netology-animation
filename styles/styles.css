@@ -6,9 +6,81 @@ li {
 	font-size: 30px;
 }
 
+.emoji {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.emoji.bb {
+	width: 62px;
+	height: 62px;
+}
+
+.emoji.wbb {
+	width: 120px;
+	height: 120px;
+}
+
+.magic {
+	background-image: url(../emoji/crystall_ball.png);
+}
+
+.think {
+	background-image: url(../emoji/thinking.png);
+}
+
+.hm {
+	background-image: url(../emoji/face-with-rolling-eyes.png);
+}
+
+.koala {
+	background-image: url(../emoji/koala.png);
+}
+
+.marg {
+	margin-top: -10px;
+}
+
+.dog {
+	background-image: url(../emoji/dog-face.png);
+}
+
+.rabbit {
+	background-image: url(../emoji/rabbit-face.png);
+}
+
+.leo {
+	background-image: url(../emoji/lion-face.png);
+}
+
+.smile {
+	background-image: url(../emoji/slightly-smiling-face.png);
+}
+
+.revsmile {
+	background-image: url(../emoji/upside-down-face.png);
+}
+
+.bad {
+	background-image: url(../emoji/smirking-face.png);
+}
+
+.sad {
+	background-image: url(../emoji/unamused-face.png);
+}
+
+.earth {
+	background-image: url(../emoji/earth-globe-europe-africa.png);
+}
+
 .border {
 	border: 1px solid #03a1ef;
 }
+
 
 /* Первый слайд */
 #cover .background {
