@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Анимация в CSS</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+	<link href="styles/styles.css" rel="stylesheet">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Анимация в CSS</h1>
+		<p>Алена Батицкая и Татьяна Тен</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2>Анимация в CSS</h2>
+		<p>It's a magic! 🔮 </p>
+		<i class="background"></i>
+		<div class="ball-container">
+			<div class="ball mb"></div>
+		</div>
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>План занятия</h2>
+		<ul>
+			<li>Transitin</li>
+			<li>Animation</li>
+			<li>Управление при помощи js</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">CSS свойство TRANSITION</h2>
+	</section>
+	<section class="slide">
+		<h2>CSS свойство TRANSITION</h2>
+		<figure class="next">
+			<blockquote>
+				<p>позволяет сделать переход от одного состояния элемента к другому плавно на протяжении некоторого времени</p>
+			</blockquote>
+		</figure>
+	</section>
+	<section class="slide">
+		<style>
+			.hover {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				margin-top: 100px;
+				padding: 30px;
+				text-align: center;
+			}
+
+			.hover a{
+				background: lightgrey;
+				color: grey;
+				margin-right: 10px;
+				padding: 15px 30px;
+				transition: none;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			.hover a:hover {
+				background: #c1d82f;
+				color: #03a1ef;
+			}
+
+			.hover a.with-transition1 {
+				transition: 1s;
+			}
+		</style>
+
+		<h2>Простой пример</h2>
+		<div class="hover">
+			<a>Без transition</a>
+			<a class="with-transition1">C transition</a>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Спецификация</h2>
+		<ul>
+			<li><mark>transition-property</mark>: color;</li>
+			<li><mark>transition-duration</mark>: 2s;</li>
+			<li><mark>transition-timing-function</mark>: ease;</li>
+			<li><mark>transition-delay</mark>: 0;</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>transition-property</h2>
+		<p>
+			Указывает на свойство, к которому будет применяться анимация.
+		</p>
+
+		<ul class="value">
+			<li><mark class="border">all</mark></li>
+			<li><mark>background-color</mark></li>
+			<li><mark>background-color</mark></li>
+			<li><mark>background-color</mark></li>
+			<li><mark>background-position</mark></li>
+			<li><mark>font-size</mark></li>
+			<li><mark>font-weight</mark></li>
+			<li><mark>height</mark></li>
+			<li><mark>width</mark></li>
+			<li><mark>visibility</mark></li>
+			<li><mark>opacity</mark></li>
+			<li>…</li>
+		</ul>
+		<a href="http://www.w3.org/TR/css3-transitions/#animatable-properties-">Полный список доступных для анимации свойств</a>
+	</section>
+	<section class="slide">
+		<style>
+			.property {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				margin-top: 100px;
+				padding: 30px;
+				text-align: center;
+			}
+
+			.property a{
+				background: lightgrey;
+				color: grey;
+				margin-right: 10px;
+				padding: 15px 30px;
+				transition: none;
+				text-decoration: underline;
+				cursor: pointer;
+				line-height: 4;
+			}
+
+			.property a:hover {
+				background: #c1d82f;
+				color: #03a1ef;
+				border: 5px solid blue;
+			}
+
+			.property a.with-background-transition {
+				transition-duration: 2s;
+				transition-property: background;
+			}
+
+			.property a.with-all-transition {
+				transition-duration: 2s;
+				transition-property: all;
+			}
+		</style>
+
+		<h2>Пример transition-property</h2>
+		<div class="property">
+		  <a>Без transition</a>
+		  <a class="with-background-transition next">transition-property: background</a>
+		  <a class="with-all-transition next">transition-property: all</a>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>transition-duration</h2>
+		<p>
+			Промежуток времени, за который произойдет полное изменение от начального значения свойства до конечного значения того же свойства.
+		</p>
+		<p>
+			Единица измерения:
+			<ul>
+				<li><mark>s</mark> - секунды (1s, 5s, 0.5s)</li>
+				<li><mark>ms</mark> - миллисекунды 🤔</li>
+			</ul>
+		</p>
+	</section>
+	<section class="slide">
+		<style>
+			.duration {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				margin-top: 100px;
+				padding: 30px;
+				text-align: center;
+				white-space: nowrap;
+			}
+
+			.duration a{
+				background: lightgrey;
+				color: grey;
+				margin-right: 10px;
+				padding: 15px 30px;
+				transition: none;
+				text-decoration: underline;
+				cursor: pointer;
+				line-height: 4;
+			}
+
+			.duration a:hover {
+				background: #c1d82f;
+				color: #03a1ef;
+			}
+
+			.duration a.with-fast-transition {
+				transition-duration: 0.5s;
+				transition-property: all;;
+			}
+
+			.duration a.with-slow-transition {
+				transition-duration: 3s;
+				transition-property: all;
+			}
+		</style>
+
+		<h2>Пример transition-duration</h2>
+		<div class="duration">
+		  <a>Без transition</a>
+		  <a class="with-fast-transition next">transition-duration: 0.5s</a><br />
+		  <a class="with-slow-transition next">transition-duration: 3s</a>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>transition-timing-function</h2>
+		<p>
+			Математическую функция, показывающая, как быстро по времени меняется значение свойства.
+		</p>
+		<ul class="value">
+			<li><mark class="border">ease</mark></li>
+			<li><mark>linear</mark></li>
+			<li><mark>ease-in-out</mark></li>
+			<li><mark>ease-in</mark></li>
+			<li><mark>ease-out</mark></li>
+			<li><mark>step-start</mark></li>
+			<li><mark>step-end</mark></li>
+			<li><mark>steps(число)</mark></li>
+			<br />
+			<li><mark><a href="http://cubic-bezier.com/">cubic-bezier(a ,b, c, d)</a></mark> 🙄</li>
+		</ul>
+		<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function">Официальная спецификация</a>
+	</section>
+	<section class="slide">
+		<style>
+			.timing {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				padding: 10px;
+				padding-bottom: 10px;
+				text-align: left;
+				font-size: 18px;
+			}
+
+			.timing p {
+				color: gray;
+			}
+
+			.timing p:first-of-type strong {
+				color: crimson;
+			}
+
+			.timing p:nth-of-type(2) strong {
+				color: midnightblue;
+			}
+
+			.timing p:nth-of-type(3) strong {
+				color: mediumseagreen;
+			}
+
+			.timing p:nth-of-type(4) strong {
+				color: orangered;
+			}
+
+			.timing p:last-of-type strong {
+				color: darkviolet;
+			}
+
+			.timing div {
+				background: crimson;
+				height: 20px;
+				left: 0;
+				margin-top: -1rem;
+				position: relative;
+				transition-property: all;
+				transition-duration: 5s;
+				width: 20px;
+			}
+			.timing:hover div {
+				left: 80%;
+			}
+			.timing .ease {
+				transition-timing-function: ease;
+				} /* Default behavior */
+			.timing .linear {
+				transition-timing-function: linear;
+				background: midnightblue;
+				} /* Constant speed */
+			.timing .ease-in {
+				transition-timing-function: ease-in;
+				background: mediumseagreen;
+			}
+			.timing .ease-out {
+				transition-timing-function: ease-out;
+				background: orangered;
+			}
+			.timing .ease-in-out {
+				transition-timing-function: ease-out;
+				background: darkviolet;
+			}
+		</style>
+
+		<h2>Пример transition-timing-function</h2>
+		<div class="timing">
+		  <p><strong>Ease</strong>: медленный старт, быстрая середина, медленное окончание</p>
+		  <div class="ease"></div>
+		  <p><strong>Linear</strong>: постоянная скорость</p>
+		  <div class="linear"></div>
+		  <p><strong>Ease In</strong>: медленный старт, быстрое окончание</p>
+		  <div class="ease-in"></div>
+		  <p><strong>Ease Out</strong>: быстрый старт, медленное окончание</p>
+		  <div class="ease-out"></div>
+		  <p><strong>Ease In Out</strong>: похоже на <code>ease</code>, но с более выраженным разгоном и торможением</p>
+		  <div class="ease-in-out"></div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>transition-delay</h2>
+		<p>
+			Задает паузу перед началом анимации.
+		</p>
+		<p>
+			Единица измерения:
+			<mark>s</mark> - секунды (60s - минута, 0.5s - полсекунды)
+		</p>
+		<p class="note">Возможно отрицательное значение, в этом случае анимация начнет выполняться не с начала, а с соответствующего данному времени «участка», при этом задержки перед началом не будет.</p>
+		<a href="https://www.w3.org/TR/css3-transitions/#transition-delay-property">Официальная спецификация</a>
+	</section>
+	<section class="slide">
+		<style>
+			.delay {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				margin-top: 100px;
+				padding: 30px;
+				text-align: center;
+			}
+
+			.delay div{
+				display: inline-block;
+				background: lightgrey;
+		    padding: 1rem;
+		    width: 80%;
+				text-align: center;
+			}
+
+			.delay a{
+				background: blue;
+		    color: white;
+		    padding: 5px 10px;
+		    text-decoration: none;
+		    transition: all 1s;
+			}
+
+			.delay div:hover a{
+				background: #c1d82f;
+				color: #03a1ef;
+			}
+
+			.delay a.with-delay {
+				transition-delay: 1s;
+			}
+		</style>
+
+		<h2>Пример transition-delay</h2>
+		<div class="delay" id="result-845">
+		  <div>
+		    <p>Наведите на серую область</p>
+		    <a>Без delay</a>
+		    <a class="with-delay">transition-delay: 1s</a>
+		  </div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Шорткат</h2>
+		<p>transition:  property duration timing-function delay;</p>
+		<p>
+			Пример:<br />
+			<mark>transition: background <span class="border">2s</span> ease-in-out 1s</mark>
+		</p>
+	</section>
+	<section class="slide">
+		<style>
+			.hover {
+				position: relative;
+				border: 1px solid #f4f1ce;
+				color: black;
+				margin: 30px 0;
+				margin-top: 100px;
+				padding: 30px;
+				text-align: center;
+			}
+
+			.hover a{
+				background: lightgrey;
+				color: grey;
+				margin-right: 10px;
+				padding: 15px 30px;
+				transition: none;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			.hover a:hover {
+				background: #c1d82f;
+				color: #03a1ef;
+			}
+
+			.hover a.with-transition {
+				transition: background 2s ease-in-out 1s;
+			}
+		</style>
+
+		<h2>Пример шортката</h2>
+		<div class="hover">
+			<a>Без transition</a>
+			<a class="with-transition">transition: background 2s ease-in-out 1s</a>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Поддержка браузерами</h2>
+		<pre>
+			<code><mark>-webkit</mark>-transition: width 2s ease;</code>
+  		<code><mark>-moz</mark>-transition: width 2s ease;</code>
+			<code><mark>-o</mark>-transition: width 2s ease;</code>
+  		<code>transition: width 2s ease;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">CSS свойство ANIMATION</h2>
+	</section>
+	<section class="slide">
+		<h2>CSS свойство ANIMATION</h2>
+		<figure class="next">
+			<blockquote>
+				<p>Позволяет анимировать css-свойства, указывая для них длительность, число и вид повторений при помощи правил раскадровки <code>@keyframe</code></p>
+			</blockquote>
+		</figure>
+	</section>
+	<section class="slide">
+		<style>
+			@keyframes bouncing {
+				0% {
+					bottom: 0;
+					box-shadow: 0 0 5px rgba(193, 216, 47, 0.7);
+				}
+				100% {
+					bottom: 50px;
+					box-shadow: 0 50px 50px rgba(193, 216, 47, 0.3);
+				}
+			}
+
+			#result-1 a {
+				animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+				background: #c1d82f;
+				border-radius: 5px;
+				display: inline-block;
+				color: #03a1ef;
+				text-shadow: 2px 2px 1px lightpink;
+				cursor: pointer;
+				font-size: 1.5rem;
+				font-weight: 300;
+				letter-spacing: 0.4em;
+				padding: 2em 4em 2.2em;
+				position: relative;
+				text-decoration: none;
+				text-transform: uppercase;
+				vertical-align: top;
+			}
+
+			#result-1 {
+				padding: 9rem 1rem 0;
+				text-align: center;
+			}
+		</style>
+		<h2>Пример анимации</h2>
+		<div class="animation-ex" id="result-1">
+			<a>Loading</a>
+		</div>
+		<figure class="next"></figure>
+	</section>
+	<section class="slide">
+		<style>
+			.too > li {
+				line-height: 1.5;
+			}
+
+			small {
+				font-size: 75%;
+			}
+		</style>
+		<h2>Спецификация</h2>
+		<ul class="too">
+			<li>
+				<mark>animation-name:</mark> name; <small class="note">(совпадает с именем @keyframes)</small>
+			</li>
+			<li>
+				<mark class="border">animation-duration:</mark> 1s/1000ms;
+			</li>
+			<li>
+				<mark class="border">animation-timing-function:</mark> ease;
+			</li>
+			<li>
+				<mark class="border">animation-delay:</mark> 0s;
+			</li>
+			<li>
+				<mark>animation-iteration-count:</mark> infinite;
+			</li>
+			<li>
+				<mark>animation-direction:</mark> reverse;
+			</li>
+			<li>
+				<mark>animation-play-state:</mark> running;
+			</li>
+			<li>
+				<mark>animation-fill-mode:</mark> none;
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Перед применением animation</h2>
+		<p>Нужно создать <mark>@keyframes</mark> - кадры анимации по шагам.
+		"Шаги" можно задать с помощью процентов, например:</p>
+		<ol>
+			<li>
+				from / 0% первый шаг анимации
+			</li>
+			<li>
+				50% состояние посередине анимации
+			</li>
+			<li>
+				to / 100% последний шаг
+			</li>
+		</ol>
+	</section>
+	<section class="slide slide-keyframes">
+		<style>
+			.slide-keyframes p {
+				line-height: 1.1em;
+			}
+		</style>
+		<h2><mark>@keyframes</mark> анимации вращения:</h2>
+		<pre>
+			<code>@keyframes spin {</code>
+			<code>  from {</code>
+			<code>    transform: rotate(0deg);</code>
+			<code>  }</code>
+			<code>  to {</code>
+			<code>    transform: rotate(360deg);</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<style>
+			 @keyframes around {
+					 0% {
+							 left: 0;
+							 top: 0;
+					 }
+					 25% {
+							 left: 240px;
+							 top: 0;
+					 }
+					 50% {
+							 left: 240px;
+							 top: 140px;
+					 }
+					 75% {
+							 left: 0;
+							 top: 140px;
+					 }
+					 100% {
+							 left: 0;
+							 top: 0;
+					 }
+			 }
+
+			 .result {
+					 height: 200px;
+					 position: absolute;
+					 right: 30%;
+					 top: 30%;
+			 }
+
+			 .square {
+					 animation: around 4s linear infinite;
+					 width: 20px;
+					 height: 20px;
+					 position: relative;
+			 }
+
+			 .square:before {
+			    content: "🐨";
+			    font-size: 60px;
+			}
+		</style>
+		<h2>Еще пример анимации и keyframes</h2>
+	 	<pre>
+			<code>@keyframes around {</code>
+			<code>  0% { left: 0; top: 0;}</code>
+			<code>  25% { left: 240px; top: 0;}</code>
+			<code>  50% { left: 240px; top: 140px;}</code>
+			<code>  75% { left: 0; top: 140px;}</code>
+			<code>  100%{ left: 0; top: 0;}</code>
+			<code>}</code>
+			<code>.square{ animation: around 4s linear infinite;}</code>
+		 </pre>
+		 <div class="result next">
+				 <div class="square"></div>
+		 </div>
+ 	</section>
+	<section class="slide">
+    <h2>animation-name</h2>
+    	<p>Используется минимум дважды - для <mark>@keyframes</mark> и для свойства <mark>animation</mark>.</p>
+	</section>
+	<section class="slide">
+		<h2>animation-duration</h2>
+		<p>Определяет длительность одного цикла анимации, и, подобно свойству <mark>transition-duration</mark>, может быть задано в секундах и милисекундах, и быть целым или дробным.</p>
+	</section>
+	<section class="slide slide-duration">
+	<style>
+		.block {
+			position: absolute;
+			top: 20%;
+			right: 50%;
+		}
+
+		@keyframes shift {
+			0% {
+				left: 0;
+			}
+			50% {
+				left: 100px;
+			}
+			100% {
+				left: 200px;
+			}
+		}
+
+		.result {
+			height: 20px;
+			position: relative;
+			margin-bottom: 45px;
+		}
+
+		.square1 {
+			position: relative;
+			width: 20px;
+			height: 20px;
+		}
+
+		.block:hover .result .square1{
+			animation: shift 2s linear infinite;
+		}
+
+		.result .square1:before {
+			content: "🐶";
+			font-size: 60px;
+		}
+
+		.block:hover .result2 .square1 {
+			animation: shift 500ms linear infinite;
+		}
+
+		.result2 .square1:before {
+			content: "🐰";
+		}
+
+		.block:hover .result3 .square1 {
+			animation: shift 4.3s linear infinite;
+		}
+
+		.result3 .square1:before {
+			content: "🦁";
+		}
+	</style>
+	<h2>Пример animation-duration</h2>
+	<mark>animation-duration : 2s;</mark><br />
+	<mark>animation-duration : 200ms;</mark><br />
+	<mark>animation-duration : 4.3s;</mark>
+	<div class="block">
+		<div class="result">
+			<div class="square1"></div>
+		</div>
+		<div class="result result2">
+			<div class="square1"></div>
+		</div>
+		<div class="result result3">
+			<div class="square1"></div>
+		</div>
+	</div>
+  </section>
+	<section class="slide">
+		<h2>animation-iteration-count</h2>
+		<p>Свойство отвечает за число повторений анимации.</p>
+		<p>
+			По умолчанию – 1, также можно указать любое число(целое или дробное) или ∞.
+		</p>
+	</section>
+	<section class="slide slide-iteration">
+		<style>
+			@keyframes shift {
+				0% {
+					left: 0;
+				}
+				50% {
+					left: 200px;
+				}
+				100% {
+					left: 400px;
+				}
+			}
+
+			.square2 {
+				position: relative;
+				width: 20px;
+				height: 20px;
+			}
+
+			.block:hover .result .square2 {
+				animation: shift 2s linear 5;
+			}
+
+			.result .square2:before {
+				content: "🐶";
+				font-size: 60px;
+			}
+
+			.block:hover .result2 .square2 {
+				animation: shift 2s linear 0.2;
+			}
+
+			.result2 .square2:before {
+				content: "🐰";
+			}
+
+			.block:hover .result3 .square2 {
+				animation: shift 2s linear infinite;
+			}
+
+			.result3 .square2:before {
+				content: "🦁";
+			}
+		</style>
+		<h2>Примеры animation-iteration-count</h2>
+		<mark>animation-iteration-count : 5;</mark><br />
+		<mark>animation-iteration-count : 0.2;</mark> <br />
+		<mark>animation-iteration-count : infinite;</mark>
+		<div class="block">
+			<div class="result">
+				<div class="square2"></div>
+			</div>
+			<div class="result result2">
+				<div class="square2"></div>
+			</div>
+
+			<div class="result result3">
+				<div class="square2"></div>
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>animation-direction</h2>
+		<p>Свойство позволяет указать, будет ли анимация воспроизводиться в обратном порядке в каких-либо из циклов.</p>
+	</section>
+	<section class="slide">
+		<h2>Значения</h2>
+		<p>
+			<mark>normal</mark> – все итерации анимации воспроизводятся как обычно.
+			<br>
+			<mark>reverse</mark> –все итерации анимации воспроизводятся в обратном порядке относительно того, как они были определены.
+			<br>
+			<mark>alternate</mark> – нечетные циклы воспроизводятся в обычном направлении, а четные – в обратном.
+			<br>
+			<mark>alternate-reverse</mark> – нечетные циклы воспроизводятся в обратном направлении, а четные – в прямом.
+		</p>
+	</section>
+	<section class="slide slide-direction">
+		<style>
+			@keyframes tobottom {
+				0% {
+					top: 0;
+				}
+				100% {
+					top: 240px;
+				}
+			}
+
+			.result-direction {
+				height: 60px;
+				margin-top: -10px;
+			}
+
+			.col {
+				width: 25%;
+				float: left;
+				text-align: center;
+			}
+
+			.square3 {
+				width: 20px;
+				height: 20px;
+				position: relative;
+				font-size: 40px;
+			}
+
+			.slide-direction .rails {
+				height: 260px;
+				position: relative;
+				width: 20px;
+				background-color: lightgray;
+				border-radius: 2px;
+				margin: 0 auto;
+			}
+
+			.col .square3 {
+				animation: tobottom 2s linear infinite;
+			}
+
+			.col .square3::before {
+				content: "🙂";
+			}
+
+			.col2 .square3 {
+				animation: tobottom 2s linear reverse infinite;
+			}
+
+			.col2 .square3:before {
+				content: "🙃";
+			}
+
+			.col3 .square3 {
+				animation: tobottom 2s linear alternate infinite;
+			}
+
+			.col3 .square3::before {
+				content: "😏";
+			}
+
+			.col4 .square3 {
+				animation: tobottom 2s linear alternate-reverse infinite;
+			}
+
+			.col4 .square3::before {
+				content: "😒";
+			}
+		</style>
+		<h2>Примеры animation-direction</h2>
+
+		<div class="result-direction">
+			<div class="col">
+				<span>normal</span>
+				<div class="rails">
+					<div class="square3"></div>
+				</div>
+			</div>
+			<div class="col col2">
+				<span>reverse</span>
+				<div class="rails">
+					<div class="square3"></div>
+				</div>
+			</div>
+			<div class="col col3">
+				<span>alternate</span>
+				<div class="rails">
+					<div class="square3"></div>
+				</div>
+			</div>
+			<div class="col col4">
+				<span>alternate-reverse</span>
+				<div class="rails">
+					<div class="square3"></div>
+				</div>
+			</div>
+	</section>
+	<section class="slide">
+		<h2>animation-play-state</h2>
+		<p>Данное свойство позволяет поставить анимацию на паузу. Для этого нужно задать ему значение paused (по умолчанию и для продолжения анимации – running).</p>
+	</section>
+	<section class="slide slide-state">
+		<style>
+			@keyframes shift {
+					0% {
+							left: 0;
+					}
+					50% {
+							left: 40%;
+					}
+					100% {
+							left: 80%;
+					}
+			}
+
+			.result-pause {
+				top: 20%;
+				right: 0;
+				left: 0;
+			}
+
+			.slide-state .square {
+					animation: shift 6s linear alternate infinite
+			}
+
+			.result-pause .square::before {
+				content: "🌍";
+				font-size: 120px;
+			}
+
+			.slide-state .result:hover .square {
+					animation-play-state: paused;
+			}
+		</style>
+		<h2>Примеры animation-play-state</h2>
+		<div class="result result-pause">
+				<div class="square"></div>
+		</div>
+		<p class="note">Остановите землю! Я сойду...</p>
+	</section>
+
+	<section class="slide">
+		<h2>animation-fill-mode</h2>
+		<p>Свойство определяет будет ли анимация воздействовать на элемент вне времени воспроизведения анимации.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Значения animation-fill-mode</h2>
+		<p><mark>None</mark>: До и после анимации воздействия на элемент нет</p>
+		<p><mark>Forwards</mark>: Стили сохранятся после окончания анимации</p>
+		<p><mark>Backwards</mark>: Стили анимации будут уже применены до начала анимации</p>
+		<p><mark>Both</mark>: Стили анимации применятся и до, и после анимации</p>
+	</section>
+
+	<section class="slide slide-mode">
+		<style>
+			.slide-mode p {
+					line-height: 1.1em;
+			}
+
+			.result-mode {
+					padding: 1rem 1rem 0;
+			}
+
+			#result-4 {
+					padding: 1rem 1rem 0;
+			}
+
+			#result-4 p {
+					color: grey;
+					margin: 0;
+					position: relative;
+			}
+
+			#result-4 p:first-child {
+					margin-bottom: 1rem;
+			}
+
+			#result-4 p span {
+					animation: toggle 6s infinite both;
+					left: 0;
+					position: absolute;
+			}
+
+			#result-4 p:first-child span {
+					animation-name: tabs;
+					margin-right: 1rem;
+					position: static;
+			}
+
+			#result-4 p span:nth-child(1) {
+					animation-delay: 0;
+					position: static;
+			}
+
+			#result-4 p span:nth-child(2) {
+					animation-delay: 2s;
+			}
+
+			#result-4 p span:nth-child(3) {
+					animation-delay: 4s;
+			}
+
+			#result-4 div {
+					background: lightgray;
+					height: 30px;
+					margin-bottom: 4rem;
+					width: 530px;
+					position: relative;
+			}
+
+			#result-4 div div {
+					animation: race-none 6s linear infinite;
+					background: crimson;
+					height: 30px;
+					margin-bottom: 0;
+					position: relative;
+					width: 30px;
+					border-radius: 50%;
+			}
+
+			#result-4 .forwards div {
+					animation-name: race-forwards;
+			}
+
+			#result-4 .backwards div {
+					animation-name: race-backwards;
+			}
+
+			#result-4 .both div {
+					animation-name: race-both;
+			}
+
+			@keyframes race-none {
+					0% {
+							background: crimson;
+							left: 0;
+					}
+					33% {
+							background: crimson;
+							left: 0;
+					}
+					34% {
+							background: midnightblue;
+							left: 250px;
+					}
+					66% {
+							background: mediumseagreen;
+							left: 500px
+					}
+					67% {
+							background: crimson;
+							left: 0;
+					}
+					100% {
+							background: crimson;
+							left: 0;
+					}
+			}
+
+			@keyframes race-forwards {
+					0% {
+							background: crimson;
+							left: 0;
+					}
+					33% {
+							background: crimson;
+							left: 0;
+					}
+					34% {
+							background: midnightblue;
+							left: 250px;
+					}
+					66% {
+							background: mediumseagreen;
+							left: 500px
+					}
+					67% {
+							background: mediumseagreen;
+							left: 500px;
+					}
+					100% {
+							background: mediumseagreen;
+							left: 500px;
+					}
+			}
+
+			@keyframes race-backwards {
+					0% {
+							background: midnightblue;
+							left: 250px;
+					}
+					33% {
+							background: midnightblue;
+							left: 250px;
+					}
+					34% {
+							background: midnightblue;
+							left: 250px;
+					}
+					66% {
+							background: mediumseagreen;
+							left: 500px
+					}
+					67% {
+							background: crimson;
+							left: 0;
+					}
+					100% {
+							background: crimson;
+							left: 0;
+					}
+			}
+
+			@keyframes race-both {
+					0% {
+							background: midnightblue;
+							left: 250px;
+					}
+					33% {
+							background: midnightblue;
+							left: 250px;
+					}
+					34% {
+							background: midnightblue;
+							left: 250px;
+					}
+					66% {
+							background: mediumseagreen;
+							left: 500px
+					}
+					67% {
+							background: mediumseagreen;
+							left: 500px;
+					}
+					100% {
+							background: mediumseagreen;
+							left: 500px;
+					}
+			}
+
+			.none:before,
+			.forwards:before,
+			.backwards:before,
+			.both:before {
+				content: "";
+				top: -45px;
+				position: absolute;
+				color: gray;
+			}
+
+			.none:before {
+				content: "none";
+			}
+
+			.forwards:before {
+				content: "forwards";
+			}
+
+			.backwards:before {
+				content: "backwards";
+			}
+
+			.both:before {
+				content: "both";
+			}
+		</style>
+		<h2>Примеры animation-fill-mode</h2>
+		<div class="result-mode" id="result-4">
+			<div class="none">
+				<div></div>
+			</div>
+			<div class="forwards">
+				<div></div>
+			</div>
+			<div class="backwards">
+				<div></div>
+			</div>
+			<div class="both">
+				<div></div>
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Поддержка браузерами</h2>
+		<pre>
+			<code>@ <mark>-moz</mark>-keyframes name { arguments }</code>
+			<code>@ <mark>-webkit</mark>-keyframes name { arguments; }</code>
+			<code>@keyframes name { arguments; }</code>
+			<code>.elem {</code>
+			<code>  <mark>-webkit</mark>-animation: arguments;</code>
+			<code>  <mark>-moz</mark>-animation: arguments;</code>
+			<code>  animation: arguments;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<style>
+			.screen {
+				max-width: 100%;
+			}
+		</style>
+		<h2>Поддержка браузерами</h2>
+		<img src="http://content.screencast.com/users/SolarRust/folders/Jing/media/14aae399-e3f2-4212-9168-41bb15dea51f/00000445.png" class="screen">
+
+		<p class="note" style="text-align: right;"><a href="http://caniuse.com/#search=animation">Can I use?</a></p>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Управление при помощи Javascript</h2>
+	</section>
+	<section class="slide">
+		<style>
+			.links::after {
+				content: "";
+				display: inline-block;
+				width: 100%;
+			}
+
+			.links {
+				text-align: justify;
+			}
+		</style>
+		<h2>События</h2>
+		<pre>
+			<code>element.addEventListener('transitionend', function() {</code>
+			<code>  //do something</code>
+			<code>});</code>
+		</pre>
+		<p class="links">
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Events/animationstart">animationstart</a>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Events/animationend">animationend</a>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Events/animationiteration">animationiteration</a>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Events/transitionend">transitionend</a>
+
+			<a href="https://www.w3.org/TR/css3-transitions/#transition-events-">https://www.w3.org/TR/css3-transitions/#transition-events-</a>
+			<a href="https://www.w3.org/TR/css3-animations/#animation-events">https://www.w3.org/TR/css3-animations/#animation-events</a>
+		</p>
+	</section>
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>
