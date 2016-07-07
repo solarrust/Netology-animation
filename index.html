@@ -1240,6 +1240,41 @@
 			<a href="https://www.w3.org/TR/css3-animations/#animation-events">https://www.w3.org/TR/css3-animations/#animation-events</a>
 		</p>
 	</section>
+	<section class="slide slide-events">
+		<style>
+			.ball-info{
+				font-size: 12px;
+			}
+			.ball-info span{
+				display: inline-block;
+				margin-right: 4px;
+				color: green;
+			}
+			.ball-info span:nth-child(1)~span{
+				color: blue;
+			}
+			.ball-info span:nth-last-child(1):nth-child(6){
+				color: red;
+			}
+		</style>
+		<h2>Пример использования событий</h2>
+		<button onclick="document.getElementById('ball').className += ' go';">Start!</button>
+		<div class="ball-container">
+			<div class="ball mb" id="ball"></div>
+		</div>
+		<div class="ball-info" id="ballInfo"></div>
+		<script>
+			ball.addEventListener('animationend',function(){
+				document.getElementById("ballInfo").innerHTML += '<span>animation end successfully</span>';
+			});
+			ball.addEventListener('animationstart',function(){
+				document.getElementById("ballInfo").innerHTML += '<span>animation start successfully</span>';
+			});
+			ball.addEventListener('animationiteration',function(){
+				document.getElementById("ballInfo").innerHTML += '<span>animation iteration</span>';
+			});
+		</script>
+	</section>
 	<div class="progress"></div>
 	<script src="shower/shower.min.js"></script>
 </body>
