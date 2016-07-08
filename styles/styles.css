@@ -625,31 +625,18 @@ small {
 .block {
 	position: absolute;
 	top: 25%;
-	right: 50%;
+	right: 10%;
+	width: 400px;
+	border: 1px solid lightgray;
+	padding: 10px;
+	text-align: center;
 }
 
-@-webkit-keyframes shift {
-	0% {
-		left: 0;
-	}
-	50% {
-		left: 100px;
-	}
-	100% {
-		left: 200px;
-	}
-}
+.block::before {
+	content: "Наведите на блок";
+	display: inline-block;
+	color: gray;
 
-@keyframes shift {
-	0% {
-		left: 0;
-	}
-	50% {
-		left: 100px;
-	}
-	100% {
-		left: 200px;
-	}
 }
 
 .result {
